@@ -7,6 +7,7 @@ export class AppService {
 	constructor(private readonly httpService: HttpService) {}
 
 	getHello(): string {
+		//Comment
 		return 'Hello World!';
 	}
 
