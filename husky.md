@@ -120,3 +120,5 @@ package.json
 "npx eslint --fix",
 ]
 }
+
+Lint staged prevent an empty git commit!
