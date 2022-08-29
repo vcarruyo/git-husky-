@@ -21,4 +21,10 @@ describe('AppController', () => {
 			expect(appController.getHello()).toBe('Hello World!');
 		});
 	});
+
+	describe('root', () => {
+		it('findAllUsers should return an array of objects', () => {
+			expect(typeof appController.findAll()).toBe('object');
+		});
+	});
 });

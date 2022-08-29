@@ -18,6 +18,12 @@ Add another property called hooks that also specifies an empty object:
 
 Create Hook
 
+Pre-push
+https://faun.pub/why-using-pre-push-git-hooks-with-husky-is-not-always-a-good-idea-6233b8afcf83
+Warning: Pay atention
+
+npx husky add .husky/pre-push "git diff HEAD --quiet && npm test"
+
 Pre-commit
 npx husky add .husky/pre-commit "npm test"
 
@@ -122,3 +128,7 @@ package.json
 }
 
 Lint staged prevent an empty git commit!
+
+
+Casos de prueba:
+1. Intentar commit 
