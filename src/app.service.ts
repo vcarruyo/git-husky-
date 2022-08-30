@@ -1,6 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { User } from './interfaces/user';
 
 @Injectable()
 export class AppService {
@@ -11,9 +12,9 @@ export class AppService {
 		return 'Hello World!';
 	}
 
-	findAllUsers(): any {
+	findOneUser(): Observable<User> {
 		return this.httpService
-			.get('https://jsonplaceholder.typicode.com/users', {
+			.get('https://jsonplaceholder.typicode.com/users/1', {
 				headers: { Accept: 'application/json' },
 			})
 			.pipe(map((response: any) => response.data));

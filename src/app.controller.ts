@@ -1,5 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
+import { map, Observable } from 'rxjs';
 import { AppService } from './app.service';
+import { User } from './interfaces/user';
 
 @Controller()
 export class AppController {
@@ -11,7 +13,9 @@ export class AppController {
 	}
 
 	@Get('/users')
-	findAll(): any {
-		return this.appService.findAllUsers();
+	findOneUser(): Observable<User> {
+		return this.appService
+			.findOneUser()
+			.pipe(map((response: any) => response.data));
 	}
 }
